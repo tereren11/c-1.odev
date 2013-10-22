@@ -1,0 +1,104 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+	char kullaniciAdi[20];
+	int sifre=12345;				//kullanıcın adi ve sifresi tanımlandı
+	int para=1000;							//hesaptaki para miktari
+	int z;						//if dongusune girebilmek icin tanımlanan sayi
+	int x;						//hesaba eklenilen ve cikarilan para miktari
+	printf("kullanici adinizi giriniz:");
+	scanf("%s",&kullaniciAdi);
+	printf("HOSGELDİNİZ, ");
+	puts(kullaniciAdi);
+	printf("sifreniz=12345\n");			//kullanici icin belirlenen sifre
+	printf("sifrenizi giriniz:");
+	scanf("%d",&sifre);
+	if(sifre==12345)
+	{
+	printf("     MENU\n");							//yapilacak islemler icin secilen menu islemleri
+	printf("==============\n");										
+	printf("#Para cekmek icin 1'e basiniz...\n");			
+	printf("#Para eklemek icin 2'e basiniz...\n");
+	printf("#Paranizi baska hesaba aktarmak icin 3'e basiniz...\n");
+	printf("#Hesaptaki para miktarini ogrenmek icin 4'e basiniz...\n");
+	printf("#Cikis icin 5'e basiniz...\n");
+	printf("Tercihinizi girin:(1/2/3/4/5)\n");		//girilen tercih sayilari
+	scanf("%d",&z);									//dongulerin icine girebilmek icin tanımlanan z
+	printf("\n");
+	}
+	else
+	{
+		printf("sifre yanlis!!!\n");			//sifre yanlıssa program sonlanacak.
+	return;
+	}
+	{
+
+	if(z==1)
+	{	
+		printf("cekeceginiz tutari giriniz:");
+		scanf("%d",&x);
+		if(x>=1000)								//hesaptaki paradan fazlaysa islem yapmayacak.
+		{	
+			printf("limit yetersiz...en fazla 1000TL \n");
+		}
+
+		else
+		{
+			
+			para=x-para;								//grilen miktar hesaptan düsecek
+			printf("kalan paraniz:%d\n",para);
+			printf("isleminiz basari ile gerceklestirildi.\n");
+		}
+
+	}
+	else if(z==2)
+	{	
+		printf("eklemek istediginiz para miktarini giriniz:");		//hesaba para eklenen kısım
+		scanf("%d",&x);
+		para=para+x;
+		printf("simdi ki para miktariniz=%d\n",para);
+		printf("isleminiz basari ile gerceklestirildi.\n");
+	}
+
+	else if(z==3)
+	{	
+		int hesapNo;
+		printf("gonderilecek hesap numarasini giriniz:");		//baska hesap numarasina para ekleniyor
+		scanf("%d",&hesapNo);
+		printf("bu hesaba gondereceginiz para miktarini giriniz:");
+		scanf("%d",&x);
+		if(x>1000)
+		{
+			printf("limit yetersiz!!!en fazla 1000TL");
+			return;
+		}
+		else
+		{
+		para=para-x;
+		printf("hesapta kalan paraniz:%d\n",para);	
+		printf("paraniz basarili bir sekilde aktarildi.\n");
+		}
+	}
+	
+	else if(z==4)
+	{																
+		printf("suan ki hesaptaki para miktariniz:%d\n",para);			//hesaptaki para miktarini gösteriyor
+		
+	}
+	else if(z==5)
+	{	
+		printf("cikis yapildi...\n");
+	}
+
+	else 
+	
+	{
+		printf("1,2,3,4,5 sayilarindan birini girmelisin.\n");			//1,2,3,4,5 sayilarinin haricinde sayi girilince uyari veriyor.
+	
+
+	}
+	
+	return;
+	}
+}
